@@ -26,19 +26,19 @@ export const MessageWall: React.FC<MessageWallProps> = ({ messages, onAddMessage
   };
 
   return (
-    <section className="w-full p-8 md:p-20 bg-[#0a0a0c] text-white border-b border-white/10 relative">
+    <section className="w-full p-8 md:p-20 bg-[#F7F2EB] text-[#1c2118] border-b border-[#8B9A6E]/20 relative">
       <div className="max-w-6xl mx-auto space-y-12">
         {/* Header */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
           <div>
-            <span className="text-xs font-mono-num text-red-500 uppercase tracking-widest block mb-2">
+            <span className="text-xs font-mono-num text-[#8B9A6E] uppercase tracking-widest block mb-2 font-bold">
               GUESTBOOK // COMMUNITY WALL
             </span>
-            <h2 className="text-5xl md:text-7xl font-display font-black tracking-tight uppercase">
+            <h2 className="text-5xl md:text-7xl font-display font-black tracking-tight uppercase text-[#1c2118]">
               LEAVE ME SOMETHING.
             </h2>
           </div>
-          <p className="text-xs font-mono-num text-neutral-400 uppercase tracking-widest max-w-xs">
+          <p className="text-xs font-mono-num text-[#5a644c] uppercase tracking-widest max-w-xs font-semibold">
             NO GIFT? NO PROBLEM. LEAVE A BIRTHDAY NOTE OR WORD OF ADVICE.
           </p>
         </div>
@@ -46,11 +46,11 @@ export const MessageWall: React.FC<MessageWallProps> = ({ messages, onAddMessage
         {/* Message Input Form */}
         <form
           onSubmit={handleSubmit}
-          className="bg-[#121216] border border-white/10 p-6 md:p-8 space-y-4 shadow-xl"
+          className="bg-[#EAE2D6] border border-[#8B9A6E]/30 p-6 md:p-8 space-y-4 rounded-3xl shadow-lg"
         >
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="space-y-1">
-              <label className="text-[10px] font-mono-num text-neutral-400 uppercase tracking-widest">
+              <label className="text-[10px] font-mono-num text-[#5a644c] uppercase tracking-widest font-bold">
                 YOUR NAME
               </label>
               <input
@@ -58,13 +58,13 @@ export const MessageWall: React.FC<MessageWallProps> = ({ messages, onAddMessage
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder="e.g. Marcus Vance"
-                className="w-full bg-neutral-950 border border-white/10 px-4 py-3 text-sm font-mono-num text-white placeholder-neutral-600 focus:outline-none focus:border-red-500 transition-colors"
+                className="w-full bg-[#EEEEEE] border border-[#8B9A6E]/30 rounded-xl px-4 py-3 text-sm font-mono-num text-[#1c2118] placeholder-[#5a644c]/60 focus:outline-none focus:border-[#8B9A6E] transition-colors"
                 required
               />
             </div>
 
             <div className="md:col-span-2 space-y-1">
-              <label className="text-[10px] font-mono-num text-neutral-400 uppercase tracking-widest">
+              <label className="text-[10px] font-mono-num text-[#5a644c] uppercase tracking-widest font-bold">
                 YOUR BIRTHDAY MESSAGE
               </label>
               <input
@@ -72,7 +72,7 @@ export const MessageWall: React.FC<MessageWallProps> = ({ messages, onAddMessage
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 placeholder="Wish me a happy 31 October birthday..."
-                className="w-full bg-neutral-950 border border-white/10 px-4 py-3 text-sm font-mono-num text-white placeholder-neutral-600 focus:outline-none focus:border-red-500 transition-colors"
+                className="w-full bg-[#EEEEEE] border border-[#8B9A6E]/30 rounded-xl px-4 py-3 text-sm font-mono-num text-[#1c2118] placeholder-[#5a644c]/60 focus:outline-none focus:border-[#8B9A6E] transition-colors"
                 required
               />
             </div>
@@ -80,18 +80,18 @@ export const MessageWall: React.FC<MessageWallProps> = ({ messages, onAddMessage
 
           <div className="flex justify-between items-center pt-2">
             {submitted ? (
-              <span className="text-xs font-mono-num text-emerald-400 uppercase tracking-wider">
+              <span className="text-xs font-mono-num text-[#8B9A6E] uppercase tracking-wider font-bold">
                 ✓ MESSAGE POSTED TO THE WALL!
               </span>
             ) : (
-              <span className="text-[10px] font-mono-num text-neutral-500 uppercase">
+              <span className="text-[10px] font-mono-num text-[#5a644c] uppercase font-semibold">
                 PUBLIC DISPLAY ON WISHLIST WALL
               </span>
             )}
 
             <button
               type="submit"
-              className="inline-flex items-center space-x-2 bg-red-600 hover:bg-red-500 text-white font-mono-num font-bold text-xs px-6 py-3 uppercase tracking-widest transition-colors"
+              className="inline-flex items-center space-x-2 bg-[#8B9A6E] hover:bg-[#7a895f] text-white font-mono-num font-bold text-xs px-6 py-3 rounded-full uppercase tracking-widest transition-colors shadow-md"
             >
               <span>SEND MESSAGE</span>
               <Send className="w-3.5 h-3.5" />
@@ -107,15 +107,15 @@ export const MessageWall: React.FC<MessageWallProps> = ({ messages, onAddMessage
               style={{
                 transform: `rotate(${msg.rotation || 0}deg)`,
               }}
-              className="bg-[#14141a] border border-white/10 hover:border-red-500/40 p-6 flex flex-col justify-between space-y-4 shadow-xl transition-all duration-300 hover:scale-[1.02]"
+              className="bg-[#EEEEEE] border border-[#8B9A6E]/30 hover:border-[#8B9A6E] p-6 rounded-2xl flex flex-col justify-between space-y-4 shadow-md transition-all duration-300 hover:scale-[1.02]"
             >
-              <p className="text-sm font-light text-neutral-200 leading-relaxed italic">
+              <p className="text-sm font-medium text-[#1c2118] leading-relaxed italic">
                 "{msg.message}"
               </p>
 
-              <div className="flex justify-between items-center border-t border-white/5 pt-3 font-mono-num text-xs">
-                <span className="font-bold text-white uppercase">{msg.name}</span>
-                <span className="text-[10px] text-neutral-500">{msg.timestamp}</span>
+              <div className="flex justify-between items-center border-t border-[#8B9A6E]/20 pt-3 font-mono-num text-xs">
+                <span className="font-bold text-[#8B9A6E] uppercase">{msg.name}</span>
+                <span className="text-[10px] text-[#5a644c] font-bold">{msg.timestamp}</span>
               </div>
             </div>
           ))}

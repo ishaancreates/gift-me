@@ -23,38 +23,38 @@ export const DeliveryModal: React.FC<DeliveryModalProps> = ({ isOpen, onClose })
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-xl animate-in fade-in duration-200">
-      <div className="relative w-full max-w-lg bg-[#121216] border border-white/20 p-8 md:p-10 text-white space-y-6 shadow-2xl">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#1c2118]/60 backdrop-blur-md animate-in fade-in duration-200">
+      <div className="relative w-full max-w-lg bg-[#F7F2EB] border border-[#8B9A6E]/30 p-8 md:p-10 rounded-3xl text-[#1c2118] space-y-6 shadow-2xl">
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 text-neutral-400 hover:text-white p-2"
+          className="absolute top-4 right-4 text-[#5a644c] hover:text-[#1c2118] p-2"
         >
           <X className="w-5 h-5" />
         </button>
 
-        <div className="flex items-center space-x-3 text-xs font-mono-num text-red-500 uppercase tracking-widest">
+        <div className="flex items-center space-x-3 text-xs font-mono-num text-[#8B9A6E] uppercase tracking-widest font-bold">
           <MapPin className="w-4 h-4" />
           <span>DELIVERY ADDRESS PROTOCOL</span>
         </div>
 
         {!revealed ? (
           <div className="space-y-6 text-center py-4">
-            <div className="w-12 h-12 bg-amber-500/10 text-amber-400 rounded-full flex items-center justify-center mx-auto border border-amber-500/30">
+            <div className="w-12 h-12 bg-[#8B9A6E]/20 text-[#8B9A6E] rounded-full flex items-center justify-center mx-auto border border-[#8B9A6E]/30">
               <AlertCircle className="w-6 h-6" />
             </div>
 
             <div className="space-y-2">
-              <h3 className="text-2xl font-display font-black uppercase text-white">
+              <h3 className="text-2xl font-display font-black uppercase text-[#1c2118]">
                 WHERE SHOULD I SEND IT?
               </h3>
-              <p className="text-xs font-mono-num text-neutral-400 uppercase tracking-wider">
+              <p className="text-xs font-mono-num text-[#5a644c] uppercase tracking-wider font-bold">
                 Only open this if you're actually sending a gift.
               </p>
             </div>
 
             <button
               onClick={() => setRevealed(true)}
-              className="w-full bg-red-600 hover:bg-red-500 text-white font-mono-num font-bold text-xs py-4 uppercase tracking-widest transition-colors shadow-lg"
+              className="w-full bg-[#8B9A6E] hover:bg-[#7a895f] text-white font-mono-num font-bold text-xs py-4 rounded-full uppercase tracking-widest transition-colors shadow-lg"
             >
               REVEAL DELIVERY ADDRESS
             </button>
@@ -62,26 +62,26 @@ export const DeliveryModal: React.FC<DeliveryModalProps> = ({ isOpen, onClose })
         ) : (
           <div className="space-y-6 animate-in fade-in duration-300">
             <div className="space-y-2">
-              <h3 className="text-2xl font-display font-black uppercase text-white">
+              <h3 className="text-2xl font-display font-black uppercase text-[#1c2118]">
                 DELIVERY DETAILS
               </h3>
-              <p className="text-xs font-mono-num text-neutral-400 uppercase tracking-wider">
+              <p className="text-xs font-mono-num text-[#5a644c] uppercase tracking-wider font-bold">
                 Use this exact address for Amazon checkout:
               </p>
             </div>
 
-            <div className="bg-neutral-950 p-6 border border-white/10 font-mono-num text-sm text-neutral-200 leading-relaxed space-y-1">
-              <p className="font-bold text-white">VF12 Old VS Hostel</p>
+            <div className="bg-[#EAE2D6] p-6 border border-[#8B9A6E]/20 rounded-2xl font-mono-num text-sm text-[#1c2118] leading-relaxed space-y-1">
+              <p className="font-bold text-[#1c2118]">VF12 Old VS Hostel</p>
               <p>KNIT Sultanpur</p>
               <p>228118</p>
               <p>Uttar Pradesh</p>
-              <p className="text-red-400 font-bold">India</p>
+              <p className="text-[#8B9A6E] font-bold">India</p>
             </div>
 
             <div className="flex space-x-3 pt-2">
               <button
                 onClick={handleCopy}
-                className="flex-1 inline-flex items-center justify-center space-x-2 bg-white text-black hover:bg-red-500 hover:text-white font-mono-num font-bold text-xs py-4 uppercase tracking-widest transition-colors shadow-lg"
+                className="flex-1 inline-flex items-center justify-center space-x-2 bg-[#8B9A6E] text-white hover:bg-[#7a895f] rounded-full font-mono-num font-bold text-xs py-4 uppercase tracking-widest transition-colors shadow-lg"
               >
                 {copied ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
                 <span>{copied ? 'COPIED TO CLIPBOARD' : 'COPY ADDRESS'}</span>

@@ -56,7 +56,7 @@ export const FeaturedProduct: React.FC<FeaturedProductProps> = ({ product, onSel
   return (
     <section
       ref={containerRef}
-      className="w-full relative min-h-[90vh] bg-black text-white flex flex-col justify-between p-8 md:p-20 overflow-hidden border-b border-white/10"
+      className="w-full relative min-h-[85vh] bg-[#F7F2EB] text-[#1c2118] flex flex-col justify-between p-8 md:p-20 overflow-hidden border-b border-[#8B9A6E]/20"
     >
       {/* Background Featured Image with parallax scaling */}
       <div className="absolute inset-0 z-0 overflow-hidden">
@@ -64,29 +64,29 @@ export const FeaturedProduct: React.FC<FeaturedProductProps> = ({ product, onSel
           ref={imgRef}
           src={product.image}
           alt={product.name}
-          className="w-full h-full object-cover object-center opacity-40 filter contrast-125"
+          className="w-full h-full object-cover object-center opacity-30 filter contrast-110"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#F7F2EB] via-[#F7F2EB]/60 to-transparent" />
       </div>
 
       {/* Header Tag */}
-      <div className="relative z-10 flex items-center space-x-3 text-xs font-mono-num text-red-500 uppercase tracking-widest">
-        <Star className="w-4 h-4 fill-red-500" />
+      <div className="relative z-10 flex items-center space-x-3 text-xs font-mono-num text-[#8B9A6E] uppercase tracking-widest font-bold">
+        <Star className="w-4 h-4 fill-[#8B9A6E]" />
         <span>CENTERPIECE // THE ONE I'D REALLY LOVE</span>
       </div>
 
       {/* Main Center Content */}
       <div className="relative z-10 my-auto max-w-4xl space-y-6 pt-12">
-        <span className="text-8xl font-display font-black text-white/20 block leading-none">
+        <span className="text-8xl font-display font-black text-[#8B9A6E]/30 block leading-none">
           {product.number}
         </span>
         <h2
           ref={titleRef}
-          className="text-4xl sm:text-6xl md:text-7xl font-display font-black tracking-tight text-white uppercase leading-none"
+          className="text-4xl sm:text-6xl md:text-7xl font-display font-black tracking-tight text-[#1c2118] uppercase leading-none"
         >
           {product.name}
         </h2>
-        <p className="text-lg md:text-xl text-neutral-300 max-w-2xl font-light">
+        <p className="text-lg md:text-xl text-[#5a644c] max-w-2xl font-medium">
           {product.whyIWantIt}
         </p>
 
@@ -97,7 +97,7 @@ export const FeaturedProduct: React.FC<FeaturedProductProps> = ({ product, onSel
             rel="noopener noreferrer"
             data-cursor
             data-cursor-text="AMAZON ↗"
-            className="inline-flex items-center space-x-3 bg-red-600 hover:bg-red-500 text-white font-mono-num font-bold text-sm px-8 py-5 uppercase tracking-widest transition-colors shadow-2xl"
+            className="inline-flex items-center space-x-3 bg-[#8B9A6E] hover:bg-[#7a895f] text-white font-mono-num font-bold text-sm px-8 py-5 rounded-full uppercase tracking-widest transition-all shadow-xl"
           >
             <span>GET THIS FOR ME</span>
             <ExternalLink className="w-4 h-4" />
@@ -105,7 +105,7 @@ export const FeaturedProduct: React.FC<FeaturedProductProps> = ({ product, onSel
 
           <button
             onClick={() => onSelect(product)}
-            className="bg-white/10 hover:bg-white/20 text-white font-mono-num font-semibold text-xs px-6 py-5 uppercase tracking-widest border border-white/20 backdrop-blur-md transition-colors"
+            className="bg-[#EAE2D6] hover:bg-[#EEEEEE] text-[#1c2118] font-mono-num font-bold text-xs px-6 py-5 rounded-full uppercase tracking-widest border border-[#8B9A6E]/30 backdrop-blur-md transition-colors shadow-sm"
           >
             EXPLORE DETAILS
           </button>
@@ -113,7 +113,7 @@ export const FeaturedProduct: React.FC<FeaturedProductProps> = ({ product, onSel
       </div>
 
       {/* Footer Info */}
-      <div className="relative z-10 flex justify-between items-center text-xs font-mono-num text-neutral-500 uppercase tracking-wider pt-8 border-t border-white/10">
+      <div className="relative z-10 flex justify-between items-center text-xs font-mono-num text-[#5a644c] uppercase tracking-wider pt-8 border-t border-[#8B9A6E]/20 font-bold">
         <span>PRIORITY // {product.priority}</span>
         <span>ESTIMATED PRICE // {product.price}</span>
       </div>

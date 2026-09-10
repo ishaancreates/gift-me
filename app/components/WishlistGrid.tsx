@@ -58,15 +58,15 @@ export const WishlistGrid: React.FC<WishlistGridProps> = ({
   return (
     <section
       id="wishlist-section"
-      className="w-full min-h-screen p-6 md:p-16 bg-[#0a0a0c] text-white border-b border-white/10"
+      className="w-full min-h-screen p-6 md:p-16 bg-[#F7F2EB] text-[#1c2118] border-b border-[#8B9A6E]/20"
     >
       {/* Section Header */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-12">
         <div>
-          <span className="text-xs font-mono-num text-red-500 uppercase tracking-widest block mb-2">
+          <span className="text-xs font-mono-num text-[#8B9A6E] uppercase tracking-widest block mb-2 font-bold">
             01 // WISHLIST ARCHIVE
           </span>
-          <h2 className="text-5xl md:text-7xl font-display font-black tracking-tight uppercase leading-none">
+          <h2 className="text-5xl md:text-7xl font-display font-black tracking-tight uppercase leading-none text-[#1c2118]">
             THE CATALOGUE.
           </h2>
         </div>
@@ -77,10 +77,10 @@ export const WishlistGrid: React.FC<WishlistGridProps> = ({
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`px-4 py-2 text-xs font-mono-num uppercase tracking-wider transition-all duration-300 ${
+              className={`px-4 py-2 text-xs font-mono-num uppercase tracking-wider rounded-full transition-all duration-300 ${
                 activeCategory === cat
-                  ? 'bg-red-600 text-white font-bold border border-red-500'
-                  : 'bg-neutral-900/80 text-neutral-400 border border-white/10 hover:border-white/30 hover:text-white'
+                  ? 'bg-[#8B9A6E] text-white font-bold border border-[#8B9A6E] shadow-md'
+                  : 'bg-[#EEEEEE] text-[#5a644c] border border-[#8B9A6E]/20 hover:border-[#8B9A6E] hover:text-[#1c2118]'
               }`}
             >
               {cat}

@@ -122,28 +122,28 @@ export const Hero: React.FC = () => {
   return (
     <section
       ref={heroRef}
-      className="relative min-h-screen w-full flex flex-col justify-between p-6 md:p-16 overflow-hidden bg-[#0a0a0c] text-white select-none border-b border-white/10"
+      className="relative min-h-screen w-full flex flex-col justify-between p-6 md:p-16 overflow-hidden bg-[#F7F2EB] text-[#1c2118] select-none border-b border-[#8B9A6E]/20"
     >
       {/* Background Interactive Glow */}
       <div
         ref={glowRef}
-        className="absolute -top-40 -left-40 w-[600px] h-[600px] bg-red-600/15 rounded-full blur-[140px] pointer-events-none"
+        className="absolute -top-40 -left-40 w-[600px] h-[600px] bg-[#8B9A6E]/20 rounded-full blur-[140px] pointer-events-none"
       />
-      <div className="absolute top-1/2 right-0 w-[500px] h-[500px] bg-amber-500/10 rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute top-1/2 right-0 w-[500px] h-[500px] bg-[#EAE2D6] rounded-full blur-[160px] pointer-events-none" />
 
       {/* Top Header info */}
-      <div className="flex justify-between items-start z-10 pt-4">
+      <div className="flex justify-between items-start z-10 pt-10 md:pt-14">
         <div className="flex items-center space-x-3">
-          <div className="w-2.5 h-2.5 bg-red-500 rounded-full animate-ping" />
-          <span className="text-xs font-mono-num tracking-widest text-neutral-400 uppercase">
+          <div className="w-2.5 h-2.5 bg-[#8B9A6E] rounded-full animate-ping" />
+          <span className="text-xs font-mono-num tracking-widest text-[#5a644c] uppercase font-bold">
             31 OCTOBER 2026
           </span>
         </div>
         <div className="text-right">
-          <span className="text-[10px] font-mono-num tracking-widest text-neutral-500 uppercase block">
+          <span className="text-[10px] font-mono-num tracking-widest text-[#5a644c] uppercase block">
             PERSONAL ARCHIVE
           </span>
-          <span className="text-xs font-mono-num font-semibold text-neutral-300">
+          <span className="text-xs font-mono-num font-semibold text-[#1c2118]">
             VOL. 01 / WISHLIST
           </span>
         </div>
@@ -154,7 +154,7 @@ export const Hero: React.FC = () => {
         <div className="overflow-hidden">
           <h1
             ref={titleLine1}
-            className="text-6xl sm:text-8xl md:text-[11rem] font-display font-black leading-[0.85] tracking-tight uppercase text-white"
+            className="text-6xl sm:text-8xl md:text-[11rem] font-display font-black leading-[0.85] tracking-tight uppercase text-[#1c2118]"
           >
             IT'S
           </h1>
@@ -162,7 +162,7 @@ export const Hero: React.FC = () => {
         <div className="overflow-hidden">
           <h1
             ref={titleLine2}
-            className="text-6xl sm:text-8xl md:text-[11rem] font-display font-black leading-[0.85] tracking-tight uppercase text-neutral-400"
+            className="text-6xl sm:text-8xl md:text-[11rem] font-display font-black leading-[0.85] tracking-tight uppercase text-[#5a644c]/70"
           >
             MY
           </h1>
@@ -170,7 +170,7 @@ export const Hero: React.FC = () => {
         <div className="overflow-hidden">
           <h1
             ref={titleLine3}
-            className="text-6xl sm:text-8xl md:text-[11rem] font-display font-black leading-[0.85] tracking-tight uppercase text-red-500 flex items-center"
+            className="text-6xl sm:text-8xl md:text-[11rem] font-display font-black leading-[0.85] tracking-tight uppercase text-[#8B9A6E] flex items-center"
           >
             BIRTHDAY.
           </h1>
@@ -178,10 +178,10 @@ export const Hero: React.FC = () => {
 
         {/* Subhead phrases */}
         <div ref={subheadRef} className="mt-8 max-w-xl space-y-2">
-          <p className="text-lg md:text-xl font-light text-neutral-300 tracking-wide">
+          <p className="text-lg md:text-xl font-medium text-[#1c2118] tracking-wide">
             Since you're probably wondering what to get me...
           </p>
-          <p className="text-sm font-mono-num text-neutral-500 tracking-widest uppercase">
+          <p className="text-sm font-mono-num text-[#5a644c] tracking-widest uppercase font-bold">
             I MADE THIS EDITORIAL WISHLIST.
           </p>
         </div>
@@ -190,42 +190,42 @@ export const Hero: React.FC = () => {
       {/* Bottom Row: Countdown & CTA */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-8 z-10 pb-4">
         {/* Countdown Box */}
-        <div ref={countdownRef} className="bg-neutral-900/60 border border-white/10 backdrop-blur-md p-5 md:p-6 rounded-none min-w-[280px]">
-          <div className="flex items-center space-x-2 text-xs font-mono-num tracking-wider text-neutral-400 mb-3">
-            <Calendar className="w-3.5 h-3.5 text-red-500" />
+        <div ref={countdownRef} className="bg-[#EAE2D6]/80 border border-[#8B9A6E]/30 backdrop-blur-md p-5 md:p-6 rounded-2xl min-w-[280px] shadow-lg">
+          <div className="flex items-center space-x-2 text-xs font-mono-num tracking-wider text-[#5a644c] mb-3 font-semibold">
+            <Calendar className="w-3.5 h-3.5 text-[#8B9A6E]" />
             <span>COUNTDOWN TO 31 OCT</span>
           </div>
 
           {timeLeft.isToday ? (
-            <div className="flex items-center space-x-2 text-2xl md:text-3xl font-display text-red-500 tracking-wider">
+            <div className="flex items-center space-x-2 text-2xl md:text-3xl font-display text-[#8B9A6E] tracking-wider">
               <Sparkles className="w-6 h-6 animate-spin" />
               <span>TODAY'S THE DAY.</span>
             </div>
           ) : (
             <div className="grid grid-cols-4 gap-4 font-mono-num text-center">
               <div>
-                <span className="text-3xl md:text-4xl font-bold text-white block">
+                <span className="text-3xl md:text-4xl font-bold text-[#1c2118] block">
                   {String(timeLeft.days).padStart(2, '0')}
                 </span>
-                <span className="text-[9px] text-neutral-500 uppercase tracking-widest">DAYS</span>
+                <span className="text-[9px] text-[#5a644c] uppercase tracking-widest font-bold">DAYS</span>
               </div>
               <div>
-                <span className="text-3xl md:text-4xl font-bold text-white block">
+                <span className="text-3xl md:text-4xl font-bold text-[#1c2118] block">
                   {String(timeLeft.hours).padStart(2, '0')}
                 </span>
-                <span className="text-[9px] text-neutral-500 uppercase tracking-widest">HRS</span>
+                <span className="text-[9px] text-[#5a644c] uppercase tracking-widest font-bold">HRS</span>
               </div>
               <div>
-                <span className="text-3xl md:text-4xl font-bold text-white block">
+                <span className="text-3xl md:text-4xl font-bold text-[#1c2118] block">
                   {String(timeLeft.minutes).padStart(2, '0')}
                 </span>
-                <span className="text-[9px] text-neutral-500 uppercase tracking-widest">MIN</span>
+                <span className="text-[9px] text-[#5a644c] uppercase tracking-widest font-bold">MIN</span>
               </div>
               <div>
-                <span className="text-3xl md:text-4xl font-bold text-red-500 block">
+                <span className="text-3xl md:text-4xl font-bold text-[#8B9A6E] block">
                   {String(timeLeft.seconds).padStart(2, '0')}
                 </span>
-                <span className="text-[9px] text-neutral-500 uppercase tracking-widest">SEC</span>
+                <span className="text-[9px] text-[#5a644c] uppercase tracking-widest font-bold">SEC</span>
               </div>
             </div>
           )}
@@ -237,7 +237,7 @@ export const Hero: React.FC = () => {
             onClick={scrollToWishlist}
             data-cursor
             data-cursor-text="EXPLORE"
-            className="group flex items-center space-x-4 bg-white text-black px-8 py-5 font-mono-num font-bold text-xs uppercase tracking-widest hover:bg-red-500 hover:text-white transition-all duration-300 cursor-pointer shadow-xl"
+            className="group flex items-center space-x-4 bg-[#8B9A6E] text-white px-8 py-5 rounded-full font-mono-num font-bold text-xs uppercase tracking-widest hover:bg-[#7a895f] transition-all duration-300 cursor-pointer shadow-xl"
           >
             <span>EXPLORE THE WISHLIST</span>
             <ArrowDown className="w-4 h-4 group-hover:translate-y-1 transition-transform" />

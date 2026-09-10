@@ -46,33 +46,33 @@ export const IntroSection: React.FC = () => {
   return (
     <section
       ref={sectionRef}
-      className="w-full min-h-[80vh] flex flex-col justify-center items-center p-8 md:p-24 bg-[#0d0d11] text-white text-center relative border-b border-white/10 overflow-hidden"
+      className="w-full min-h-[70vh] flex flex-col justify-center items-center p-8 md:p-24 bg-[#EAE2D6] text-[#1c2118] text-center relative border-b border-[#8B9A6E]/20 overflow-hidden"
     >
-      <div className="max-w-5xl space-y-12 z-10">
+      <div className="max-w-5xl space-y-10 z-10">
         <h2
           ref={text1Ref}
-          className="text-4xl md:text-7xl font-display font-black tracking-tight text-neutral-500 uppercase leading-none"
+          className="text-4xl md:text-7xl font-display font-black tracking-tight text-[#5a644c] uppercase leading-none"
         >
           I DON'T NEED <br />
-          <span className="text-white">A BIRTHDAY GIFT.</span>
+          <span className="text-[#1c2118]">A BIRTHDAY GIFT.</span>
         </h2>
 
         <div
           ref={text2Ref}
-          className="inline-block py-2 px-6 bg-red-600/20 border border-red-500/40 text-red-500 font-mono-num text-xs tracking-widest uppercase"
+          className="inline-block py-2.5 px-6 bg-[#8B9A6E]/20 border border-[#8B9A6E]/40 text-[#5a644c] font-mono-num text-xs tracking-widest uppercase font-bold rounded-full"
         >
           BUT... IF YOU'RE INSISTING.
         </div>
 
         <h3
           ref={text3Ref}
-          className="text-3xl md:text-6xl font-display tracking-tight text-white uppercase"
+          className="text-3xl md:text-6xl font-display tracking-tight text-[#8B9A6E] uppercase"
         >
           HERE'S WHAT I'D LIKE.
         </h3>
       </div>
 
-      <div className="absolute left-8 bottom-8 text-[10px] font-mono-num text-neutral-600 uppercase tracking-widest">
+      <div className="absolute left-8 bottom-8 text-[10px] font-mono-num text-[#5a644c] uppercase tracking-widest font-semibold">
         STORYLINE // EDITORIAL MANIFESTO
       </div>
     </section>

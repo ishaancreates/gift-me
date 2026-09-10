@@ -56,10 +56,10 @@ export const CustomCursor: React.FC<CustomCursorProps> = () => {
     >
       {/* Outer Circle Ring */}
       <div
-        className={`-translate-x-1/2 -translate-y-1/2 rounded-full border border-white/50 flex items-center justify-center transition-all duration-300 ${
+        className={`-translate-x-1/2 -translate-y-1/2 rounded-full border flex items-center justify-center transition-all duration-300 ${
           isHovered
-            ? 'w-24 h-24 bg-white text-black font-mono-num text-[10px] tracking-widest font-bold uppercase shadow-2xl scale-100'
-            : 'w-8 h-8 bg-transparent border-red-500/80 scale-75'
+            ? 'w-24 h-24 bg-[#1c2118] text-white font-mono-num text-[10px] tracking-widest font-bold uppercase shadow-2xl scale-100 border-[#8B9A6E]'
+            : 'w-8 h-8 bg-transparent border-[#8B9A6E] scale-75'
         }`}
       >
         {isHovered && cursorText && (
@@ -69,7 +69,7 @@ export const CustomCursor: React.FC<CustomCursorProps> = () => {
 
       {/* Tiny Core Dot */}
       <div
-        className={`absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-red-500 transition-opacity duration-200 ${
+        className={`absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-[#8B9A6E] transition-opacity duration-200 ${
           isHovered ? 'opacity-0' : 'opacity-100'
         }`}
       />

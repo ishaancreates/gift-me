@@ -65,18 +65,18 @@ export const AdminView: React.FC<AdminViewProps> = ({
 
   if (!isAuthenticated) {
     return (
-      <section className="min-h-screen w-full flex items-center justify-center p-6 bg-[#0a0a0c] text-white">
+      <section className="min-h-screen w-full flex items-center justify-center p-6 bg-[#F7F2EB] text-[#1c2118]">
         <form
           onSubmit={handleAuth}
-          className="w-full max-w-md bg-[#121216] border border-white/20 p-8 space-y-6 text-center"
+          className="w-full max-w-md bg-[#EAE2D6] border border-[#8B9A6E]/30 p-8 space-y-6 rounded-3xl text-center shadow-xl"
         >
-          <div className="w-12 h-12 bg-red-600/20 text-red-500 rounded-full flex items-center justify-center mx-auto border border-red-500/30">
+          <div className="w-12 h-12 bg-[#8B9A6E]/20 text-[#8B9A6E] rounded-full flex items-center justify-center mx-auto border border-[#8B9A6E]/40">
             <Lock className="w-6 h-6" />
           </div>
 
           <div className="space-y-2">
-            <h2 className="text-3xl font-display font-black uppercase">ADMIN DASHBOARD</h2>
-            <p className="text-xs font-mono-num text-neutral-400">
+            <h2 className="text-3xl font-display font-black uppercase text-[#1c2118]">ADMIN DASHBOARD</h2>
+            <p className="text-xs font-mono-num text-[#5a644c] font-bold">
               ENTER ACCESS CODE (Passcode: 3110)
             </p>
           </div>
@@ -86,12 +86,12 @@ export const AdminView: React.FC<AdminViewProps> = ({
             value={passcode}
             onChange={(e) => setPasscode(e.target.value)}
             placeholder="Enter passcode..."
-            className="w-full bg-neutral-950 border border-white/10 px-4 py-3 font-mono-num text-center text-white focus:outline-none focus:border-red-500"
+            className="w-full bg-[#EEEEEE] border border-[#8B9A6E]/30 rounded-xl px-4 py-3 font-mono-num text-center text-[#1c2118] focus:outline-none focus:border-[#8B9A6E]"
           />
 
           <button
             type="submit"
-            className="w-full bg-red-600 hover:bg-red-500 text-white font-mono-num font-bold text-xs py-4 uppercase tracking-widest transition-colors"
+            className="w-full bg-[#8B9A6E] hover:bg-[#7a895f] text-white font-mono-num font-bold text-xs py-4 rounded-full uppercase tracking-widest transition-colors shadow-md"
           >
             AUTHENTICATE
           </button>
@@ -101,14 +101,14 @@ export const AdminView: React.FC<AdminViewProps> = ({
   }
 
   return (
-    <section className="min-h-screen w-full p-6 md:p-16 bg-[#0a0a0c] text-white space-y-12">
+    <section className="min-h-screen w-full p-6 md:p-16 bg-[#F7F2EB] text-[#1c2118] space-y-12">
       {/* Admin Header */}
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 border-b border-white/10 pb-8">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 border-b border-[#8B9A6E]/20 pb-8">
         <div>
-          <span className="text-xs font-mono-num text-red-500 uppercase tracking-widest block mb-2">
+          <span className="text-xs font-mono-num text-[#8B9A6E] uppercase tracking-widest block mb-2 font-bold">
             ADMINISTRATIVE CONTROL PANEL
           </span>
-          <h1 className="text-4xl md:text-6xl font-display font-black uppercase">
+          <h1 className="text-4xl md:text-6xl font-display font-black uppercase text-[#1c2118]">
             WISHLIST MANAGER
           </h1>
         </div>
@@ -116,15 +116,15 @@ export const AdminView: React.FC<AdminViewProps> = ({
         <div className="flex flex-wrap gap-4">
           <button
             onClick={onResetClaims}
-            className="inline-flex items-center space-x-2 bg-neutral-900 hover:bg-neutral-800 text-neutral-300 border border-white/10 font-mono-num text-xs px-5 py-3 uppercase tracking-wider transition-colors"
+            className="inline-flex items-center space-x-2 bg-[#EEEEEE] hover:bg-[#EAE2D6] text-[#1c2118] border border-[#8B9A6E]/30 font-mono-num text-xs px-5 py-3 rounded-full uppercase tracking-wider transition-colors font-bold shadow-sm"
           >
-            <RotateCcw className="w-4 h-4 text-red-500" />
+            <RotateCcw className="w-4 h-4 text-[#8B9A6E]" />
             <span>RESET ALL CLAIMS</span>
           </button>
 
           <button
             onClick={handleCreateNew}
-            className="inline-flex items-center space-x-2 bg-red-600 hover:bg-red-500 text-white font-mono-num font-bold text-xs px-6 py-3 uppercase tracking-widest transition-colors"
+            className="inline-flex items-center space-x-2 bg-[#8B9A6E] hover:bg-[#7a895f] text-white font-mono-num font-bold text-xs px-6 py-3 rounded-full uppercase tracking-widest transition-colors shadow-md"
           >
             <Plus className="w-4 h-4" />
             <span>ADD NEW ITEM</span>
@@ -136,16 +136,16 @@ export const AdminView: React.FC<AdminViewProps> = ({
       {editingProduct && (
         <form
           onSubmit={handleSaveEdit}
-          className="bg-[#14141a] border border-red-500/50 p-6 md:p-8 space-y-6 rounded-none shadow-2xl"
+          className="bg-[#EAE2D6] border border-[#8B9A6E]/50 p-6 md:p-8 space-y-6 rounded-3xl shadow-xl"
         >
-          <div className="flex justify-between items-center border-b border-white/10 pb-4">
-            <h3 className="text-xl font-display font-black uppercase text-red-500">
+          <div className="flex justify-between items-center border-b border-[#8B9A6E]/20 pb-4">
+            <h3 className="text-xl font-display font-black uppercase text-[#8B9A6E]">
               EDIT PRODUCT {editingProduct.number}
             </h3>
             <button
               type="button"
               onClick={() => setEditingProduct(null)}
-              className="text-xs font-mono-num text-neutral-400 hover:text-white"
+              className="text-xs font-mono-num text-[#5a644c] hover:text-[#1c2118] font-bold"
             >
               CANCEL
             </button>
@@ -153,55 +153,55 @@ export const AdminView: React.FC<AdminViewProps> = ({
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 font-mono-num text-xs">
             <div>
-              <label className="text-neutral-400 block mb-1">NAME</label>
+              <label className="text-[#5a644c] block mb-1 font-bold">NAME</label>
               <input
                 type="text"
                 value={editingProduct.name}
                 onChange={(e) =>
                   setEditingProduct({ ...editingProduct, name: e.target.value })
                 }
-                className="w-full bg-neutral-950 border border-white/10 p-3 text-white"
+                className="w-full bg-[#EEEEEE] border border-[#8B9A6E]/30 rounded-xl p-3 text-[#1c2118]"
               />
             </div>
 
             <div>
-              <label className="text-neutral-400 block mb-1">PRICE</label>
+              <label className="text-[#5a644c] block mb-1 font-bold">PRICE</label>
               <input
                 type="text"
                 value={editingProduct.price}
                 onChange={(e) =>
                   setEditingProduct({ ...editingProduct, price: e.target.value })
                 }
-                className="w-full bg-neutral-950 border border-white/10 p-3 text-white"
+                className="w-full bg-[#EEEEEE] border border-[#8B9A6E]/30 rounded-xl p-3 text-[#1c2118]"
               />
             </div>
 
             <div>
-              <label className="text-neutral-400 block mb-1">AMAZON PURCHASE URL</label>
+              <label className="text-[#5a644c] block mb-1 font-bold">AMAZON PURCHASE URL</label>
               <input
                 type="text"
                 value={editingProduct.purchaseUrl}
                 onChange={(e) =>
                   setEditingProduct({ ...editingProduct, purchaseUrl: e.target.value })
                 }
-                className="w-full bg-neutral-950 border border-white/10 p-3 text-white"
+                className="w-full bg-[#EEEEEE] border border-[#8B9A6E]/30 rounded-xl p-3 text-[#1c2118]"
               />
             </div>
 
             <div>
-              <label className="text-neutral-400 block mb-1">IMAGE URL</label>
+              <label className="text-[#5a644c] block mb-1 font-bold">IMAGE URL</label>
               <input
                 type="text"
                 value={editingProduct.image}
                 onChange={(e) =>
                   setEditingProduct({ ...editingProduct, image: e.target.value })
                 }
-                className="w-full bg-neutral-950 border border-white/10 p-3 text-white"
+                className="w-full bg-[#EEEEEE] border border-[#8B9A6E]/30 rounded-xl p-3 text-[#1c2118]"
               />
             </div>
 
             <div>
-              <label className="text-neutral-400 block mb-1">CATEGORY</label>
+              <label className="text-[#5a644c] block mb-1 font-bold">CATEGORY</label>
               <select
                 value={editingProduct.category}
                 onChange={(e) =>
@@ -210,7 +210,7 @@ export const AdminView: React.FC<AdminViewProps> = ({
                     category: e.target.value as any,
                   })
                 }
-                className="w-full bg-neutral-950 border border-white/10 p-3 text-white"
+                className="w-full bg-[#EEEEEE] border border-[#8B9A6E]/30 rounded-xl p-3 text-[#1c2118]"
               >
                 {['TECH', 'FASHION', 'BOOKS', 'GAMING', 'ACCESSORIES', 'OTHER'].map((c) => (
                   <option key={c} value={c}>
@@ -221,7 +221,7 @@ export const AdminView: React.FC<AdminViewProps> = ({
             </div>
 
             <div>
-              <label className="text-neutral-400 block mb-1">PRIORITY</label>
+              <label className="text-[#5a644c] block mb-1 font-bold">PRIORITY</label>
               <select
                 value={editingProduct.priority}
                 onChange={(e) =>
@@ -230,7 +230,7 @@ export const AdminView: React.FC<AdminViewProps> = ({
                     priority: e.target.value as any,
                   })
                 }
-                className="w-full bg-neutral-950 border border-white/10 p-3 text-white"
+                className="w-full bg-[#EEEEEE] border border-[#8B9A6E]/30 rounded-xl p-3 text-[#1c2118]"
               >
                 {['MUST HAVE', 'HIGH', 'NICE TO HAVE'].map((p) => (
                   <option key={p} value={p}>
@@ -241,13 +241,13 @@ export const AdminView: React.FC<AdminViewProps> = ({
             </div>
 
             <div className="md:col-span-2">
-              <label className="text-neutral-400 block mb-1">WHY I WANT IT</label>
+              <label className="text-[#5a644c] block mb-1 font-bold">WHY I WANT IT</label>
               <textarea
                 value={editingProduct.whyIWantIt}
                 onChange={(e) =>
                   setEditingProduct({ ...editingProduct, whyIWantIt: e.target.value })
                 }
-                className="w-full bg-neutral-950 border border-white/10 p-3 text-white h-20"
+                className="w-full bg-[#EEEEEE] border border-[#8B9A6E]/30 rounded-xl p-3 text-[#1c2118] h-20"
               />
             </div>
           </div>
@@ -255,7 +255,7 @@ export const AdminView: React.FC<AdminViewProps> = ({
           <div className="flex space-x-4">
             <button
               type="submit"
-              className="bg-red-600 hover:bg-red-500 text-white font-mono-num font-bold text-xs py-3 px-8 uppercase tracking-widest"
+              className="bg-[#8B9A6E] hover:bg-[#7a895f] text-white font-mono-num font-bold text-xs py-3 px-8 rounded-full uppercase tracking-widest shadow-md"
             >
               SAVE CHANGES
             </button>
@@ -265,7 +265,7 @@ export const AdminView: React.FC<AdminViewProps> = ({
 
       {/* Product List Table */}
       <div className="space-y-4">
-        <h3 className="text-xl font-display font-black uppercase text-neutral-400">
+        <h3 className="text-xl font-display font-black uppercase text-[#5a644c]">
           PRODUCTS ({products.length})
         </h3>
 
@@ -273,29 +273,29 @@ export const AdminView: React.FC<AdminViewProps> = ({
           {products.map((p) => (
             <div
               key={p.id}
-              className="bg-[#121216] border border-white/10 p-4 flex flex-col md:flex-row justify-between items-start md:items-center gap-4 font-mono-num text-xs"
+              className="bg-[#EEEEEE] border border-[#8B9A6E]/20 p-4 rounded-2xl flex flex-col md:flex-row justify-between items-start md:items-center gap-4 font-mono-num text-xs shadow-sm"
             >
               <div className="flex items-center space-x-4">
-                <span className="text-xl font-bold font-display text-red-500">
+                <span className="text-xl font-bold font-display text-[#8B9A6E]">
                   {p.number}
                 </span>
                 <img
                   src={p.image}
                   alt={p.name}
-                  className="w-12 h-12 object-cover border border-white/10"
+                  className="w-12 h-12 object-cover border border-[#8B9A6E]/30 rounded-lg"
                 />
                 <div>
-                  <h4 className="font-bold text-white text-sm">{p.name}</h4>
-                  <span className="text-neutral-500">{p.price} • {p.category}</span>
+                  <h4 className="font-bold text-[#1c2118] text-sm">{p.name}</h4>
+                  <span className="text-[#5a644c] font-semibold">{p.price} • {p.category}</span>
                 </div>
               </div>
 
               <div className="flex items-center space-x-3 w-full md:w-auto justify-end">
                 <span
-                  className={`px-2 py-1 text-[10px] ${
+                  className={`px-3 py-1 rounded-full text-[10px] font-bold ${
                     p.claimed
-                      ? 'bg-emerald-950 text-emerald-400 border border-emerald-500/30'
-                      : 'bg-neutral-900 text-neutral-400'
+                      ? 'bg-[#8B9A6E] text-white'
+                      : 'bg-[#EAE2D6] text-[#5a644c]'
                   }`}
                 >
                   {p.claimed ? 'CLAIMED' : 'AVAILABLE'}
@@ -303,7 +303,7 @@ export const AdminView: React.FC<AdminViewProps> = ({
 
                 <button
                   onClick={() => setEditingProduct(p)}
-                  className="bg-neutral-800 hover:bg-neutral-700 text-white p-2 border border-white/10"
+                  className="bg-[#EAE2D6] hover:bg-[#8B9A6E] text-[#1c2118] hover:text-white p-2 rounded-lg border border-[#8B9A6E]/30 transition-colors"
                   title="Edit"
                 >
                   <Edit3 className="w-4 h-4" />
@@ -311,7 +311,7 @@ export const AdminView: React.FC<AdminViewProps> = ({
 
                 <button
                   onClick={() => onDeleteProduct(p.id)}
-                  className="bg-red-950/60 hover:bg-red-900 text-red-400 p-2 border border-red-500/30"
+                  className="bg-[#EAE2D6] hover:bg-[#8B9A6E] text-[#5a644c] hover:text-white p-2 rounded-lg border border-[#8B9A6E]/30 transition-colors"
                   title="Delete"
                 >
                   <Trash2 className="w-4 h-4" />
@@ -324,7 +324,7 @@ export const AdminView: React.FC<AdminViewProps> = ({
 
       {/* Messages Management Table */}
       <div className="space-y-4 pt-8">
-        <h3 className="text-xl font-display font-black uppercase text-neutral-400">
+        <h3 className="text-xl font-display font-black uppercase text-[#5a644c]">
           MESSAGES ({messages.length})
         </h3>
 
@@ -332,15 +332,15 @@ export const AdminView: React.FC<AdminViewProps> = ({
           {messages.map((m) => (
             <div
               key={m.id}
-              className="bg-[#121216] border border-white/10 p-4 flex justify-between items-center font-mono-num text-xs"
+              className="bg-[#EEEEEE] border border-[#8B9A6E]/20 p-4 rounded-2xl flex justify-between items-center font-mono-num text-xs shadow-sm"
             >
               <div>
-                <span className="font-bold text-white block">{m.name}</span>
-                <p className="text-neutral-300 font-light mt-1 font-sans">{m.message}</p>
+                <span className="font-bold text-[#1c2118] block">{m.name}</span>
+                <p className="text-[#5a644c] font-medium mt-1 font-sans">{m.message}</p>
               </div>
               <button
                 onClick={() => onDeleteMessage(m.id)}
-                className="text-neutral-500 hover:text-red-500 p-2"
+                className="text-[#5a644c] hover:text-[#8B9A6E] p-2"
               >
                 <Trash2 className="w-4 h-4" />
               </button>

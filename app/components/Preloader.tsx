@@ -51,34 +51,34 @@ export const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
   return (
     <div
       ref={containerRef}
-      className="fixed inset-0 z-50 bg-[#0a0a0c] text-white flex flex-col justify-between p-8 md:p-16 select-none bg-grain border-b border-white/10"
+      className="fixed inset-0 z-50 bg-[#F7F2EB] text-[#1c2118] flex flex-col justify-between p-8 md:p-16 select-none bg-grain border-b border-[#8B9A6E]/20"
       style={{ clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)' }}
     >
-      <div className="flex justify-between items-center text-xs tracking-widest uppercase font-mono-num text-neutral-500">
+      <div className="flex justify-between items-center text-xs tracking-widest uppercase font-mono-num text-[#5a644c] font-bold">
         <span>EDITION // 2026</span>
         <span>WISHLIST ARCHIVE</span>
       </div>
 
       <div ref={textRef} className="my-auto flex flex-col items-start space-y-2">
-        <span className="text-red-500 font-mono-num text-sm tracking-wider uppercase font-semibold">
+        <span className="text-[#8B9A6E] font-mono-num text-sm tracking-wider uppercase font-extrabold">
           INITIALIZING EXPERIENCE
         </span>
         <div className="flex items-baseline space-x-6">
-          <h1 className="text-7xl md:text-9xl font-black font-mono-num tracking-tighter text-white">
+          <h1 className="text-7xl md:text-9xl font-black font-mono-num tracking-tighter text-[#1c2118]">
             {String(num).padStart(2, '0')}
           </h1>
           <div className="flex flex-col">
-            <span className="text-3xl md:text-5xl font-display tracking-tight uppercase text-neutral-400">
+            <span className="text-3xl md:text-5xl font-display tracking-tight uppercase text-[#5a644c]">
               OCTOBER
             </span>
-            <span className="text-xs font-mono-num tracking-widest text-neutral-500">
+            <span className="text-xs font-mono-num tracking-widest text-[#5a644c] font-bold">
               31ST BIRTHDAY
             </span>
           </div>
         </div>
       </div>
 
-      <div className="flex justify-between items-center text-xs tracking-wider uppercase font-mono-num text-neutral-600 border-t border-white/5 pt-4">
+      <div className="flex justify-between items-center text-xs tracking-wider uppercase font-mono-num text-[#5a644c] border-t border-[#8B9A6E]/20 pt-4 font-bold">
         <span>LANDON & ANIME INSPIRED</span>
         <span>LOADING {num}%</span>
       </div>
