@@ -122,7 +122,7 @@ export const Hero: React.FC = () => {
   return (
     <section
       ref={heroRef}
-      className="relative min-h-screen w-full flex flex-col justify-between p-6 md:p-16 overflow-hidden bg-[#F7F2EB] text-[#1c2118] select-none border-b border-[#8B9A6E]/20"
+      className="relative min-h-screen w-full flex flex-col justify-between p-6 md:px-16 md:pb-16 md:pt-20 overflow-hidden bg-[#F7F2EB] text-[#1c2118] select-none border-b border-[#8B9A6E]/20"
     >
       {/* Background Interactive Glow */}
       <div
@@ -132,9 +132,9 @@ export const Hero: React.FC = () => {
       <div className="absolute top-1/2 right-0 w-[500px] h-[500px] bg-[#EAE2D6] rounded-full blur-[160px] pointer-events-none" />
 
       {/* Top Header info */}
-      <div className="flex justify-between items-start z-10 pt-10 md:pt-14">
+      <div className="flex justify-between items-start z-10 pt-16 md:pt-4">
         <div className="flex items-center space-x-3">
-          <div className="w-2.5 h-2.5 bg-[#8B9A6E] rounded-full animate-ping" />
+         
           <span className="text-xs font-mono-num tracking-widest text-[#5a644c] uppercase font-bold">
             31 OCTOBER 2026
           </span>

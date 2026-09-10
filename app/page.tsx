@@ -122,7 +122,7 @@ export default function Home() {
 
       {/* Page Content Render */}
       {viewMode === 'home' ? (
-        <div className="pt-10">
+        <div>
           <Hero />
           <IntroSection />
 
@@ -156,11 +156,13 @@ export default function Home() {
           {/* Editorial Footer */}
           <footer className="w-full p-8 md:p-16 bg-[#EEEEEE] text-[#5a644c] font-mono-num text-xs flex flex-col md:flex-row justify-between items-center gap-4 border-t border-[#8B9A6E]/20 font-bold">
             <div>
-              <span>OCTOBER 31ST BIRTHDAY ARCHIVE</span>
+              <span>ISHAAN PANDEY'S BIRTHDAY WISHLIST</span>
               <span className="mx-2">•</span>
-              <span>INSPIRED BY LANDON & ANIME</span>
+              <span>DON'T FORGET TO SURPRISE HIM</span>
             </div>
-            <div>NO PAYMENT PROCESSED ON SITE • DIRECT AMAZON REDIRECTS</div>
+            <div className="text-right">
+              <span>CONTACT: ISHAANMAYBE@GMAIL.COM OR 9198347345</span>
+            </div>
           </footer>
         </div>
       ) : (

@@ -30,10 +30,11 @@ export const AdminView: React.FC<AdminViewProps> = ({
   // Simple admin lock screen passcode check
   const handleAuth = (e: React.FormEvent) => {
     e.preventDefault();
-    if (passcode === '3110' || passcode === 'admin') {
+    if (passcode === process.env.NEXT_PUBLIC_ADMIN_KEY) {
       setIsAuthenticated(true);
-    } else {
-      alert('Invalid passcode. Use "3110" or "admin".');
+    } 
+    else {
+      alert("Jyada hero banne ki koshish na kare. Ye bas Ishaan access kar skta hai.")
     }
   };
 
