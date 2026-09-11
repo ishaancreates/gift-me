@@ -27,7 +27,7 @@ export default function Home() {
   const [claimingProduct, setClaimingProduct] = useState<Product | null>(null);
   const [isDeliveryOpen, setIsDeliveryOpen] = useState(false);
 
-  // Initialize and Sync LocalStorage
+  // Initialize and Sync LocalStorage & API
   useEffect(() => {
     const savedProducts = localStorage.getItem('wishlist_products_v2');
     if (savedProducts) {
@@ -38,24 +38,20 @@ export default function Home() {
       }
     }
 
-    const savedMessages = localStorage.getItem('wishlist_messages_v1');
-    if (savedMessages) {
-      try {
-        setMessages(JSON.parse(savedMessages));
-      } catch (e) {
-        console.error('Failed to parse saved messages', e);
-      }
-    }
+    // Fetch messages from MongoDB API
+    fetch('/api/messages')
+      .then((res) => res.json())
+      .then((data) => {
+        if (Array.isArray(data)) {
+          setMessages(data);
+        }
+      })
+      .catch((e) => console.error('Failed to load messages from MongoDB', e));
   }, []);
 
   const saveProducts = (newProds: Product[]) => {
     setProducts(newProds);
     localStorage.setItem('wishlist_products_v2', JSON.stringify(newProds));
-  };
-
-  const saveMessages = (newMsgs: BirthdayMessage[]) => {
-    setMessages(newMsgs);
-    localStorage.setItem('wishlist_messages_v1', JSON.stringify(newMsgs));
   };
 
   // Product Claim Handler
@@ -87,20 +83,33 @@ export default function Home() {
     saveProducts(list);
   };
 
-  const handleAddMessage = (msg: { name: string; message: string }) => {
-    const newMsg: BirthdayMessage = {
-      id: `msg-${Date.now()}`,
-      name: msg.name,
-      message: msg.message,
-      timestamp: 'Just now',
-      rotation: (Math.random() - 0.5) * 5,
-    };
-    saveMessages([newMsg, ...messages]);
+  const handleAddMessage = async (msg: { name: string; message: string }) => {
+    try {
+      const res = await fetch('/api/messages', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(msg),
+      });
+      if (res.ok) {
+        const createdMsg: BirthdayMessage = await res.json();
+        setMessages((prev) => [createdMsg, ...prev]);
+      }
+    } catch (e) {
+      console.error('Failed to add message to MongoDB:', e);
+    }
   };
 
-  const handleDeleteMessage = (id: string) => {
-    const list = messages.filter((m) => m.id !== id);
-    saveMessages(list);
+  const handleDeleteMessage = async (id: string) => {
+    try {
+      const res = await fetch(`/api/messages?id=${encodeURIComponent(id)}`, {
+        method: 'DELETE',
+      });
+      if (res.ok) {
+        setMessages((prev) => prev.filter((m) => m.id !== id));
+      }
+    } catch (e) {
+      console.error('Failed to delete message from MongoDB:', e);
+    }
   };
 
   const featuredItem = products.find((p) => p.featured) || products[0];
